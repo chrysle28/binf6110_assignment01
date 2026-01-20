@@ -32,7 +32,7 @@ flye -t <#> –genome-size <#> –nano-hq input.fastq -o output_dir
 ### 2.4 | Alignment
 The de novo assembly will be aligned with the reference genome using [Minimap2 (v2.30)](https://github.com/lh3/minimap2). Two different presets will be used: one for mapping of reads to the reference, and one for complete genome-to-genome alignment.
 ```
-minimap2 -ax map-ont -t <#> assembly.fasta reference.fasta > output.sam
+minimap2 -ax lr:hq -t <#> assembly.fasta reference.fasta > output.sam
 minimap2 -ax asm5 -t <#> assembly.fasta reference.fasta > output.sam
 ```
 > The asm5 parameter will be employed as it is expected that the assembly and reference will have less than 5% divergence.
