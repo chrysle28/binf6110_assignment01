@@ -75,7 +75,7 @@ The _de novo_ assembly was visualized using Bandage (v0.9.0), with the input fil
 ## **3 | Results**
 **Quality of _de novo_ Genome Assembly and Alignment to Reference**
 
-Assembly of the long read sequences with Flye resulted in three contigs, with lengths of 3,318,776 bp, 1,676,977 bp, and 109,059 bp (Fig. 1, Fig. 2A, Fig. 3, Fig. 4). The assembly's total length was 5,104,812 bp, compared to the reference genome's length of 4,951,383 bp. The largest continuous alignment in the assembly was 953,687 bp. The bandage plot reports an additional sequence 6,269 bp long, which represents repeated regions which were not resolved. QUAST analysis reported that the total number of aligned bases in the assembly was 4,746,095, with a duplication ratio of 1.002, while the genome fraction was 95.669%. Moreover, QUAST showed that there were 35 total misassemblies (25 relocations and 10 local), with an overall misassembled contigs length  of 4,995,753 bp. (Fig. 2B). There were 27.39 mismatches per 100 kbp, and 3.81 indels per 100 kbp.
+Assembly of the long read sequences with Flye resulted in three contigs, with lengths of 3,318,776 bp, 1,676,977 bp, and 109,059 bp (Fig. 1, Fig. 2A, Fig. 3, Fig. 4). The assembly's total length was 5,104,812 bp, compared to the reference genome's length of 4,951,383 bp. The largest continuous alignment in the assembly was 953,687 bp. The bandage plot reports an additional sequence 6,269 bp long, which represents repeated regions which were not resolved. QUAST analysis reported that the total number of aligned bases in the assembly was 4,746,095, with a duplication ratio of 1.002, while the genome fraction was 95.669%. Moreover, QUAST showed that there were 35 total misassemblies (25 relocations and 10 local), with an overall misassembled contigs length of 4,995,753 bp. (Fig. 2B). There were 27.39 mismatches per 100 kbp, and 3.81 indels per 100 kbp. Contig 4, representing the assembled plasmid, is unaligned with the reference plasmid (Fig 2).
 
 <img width="926" height="578" alt="bandage_plot" src="https://github.com/user-attachments/assets/bbb104ba-8bbd-4036-8b74-73c1ef718a49" />
 
@@ -85,7 +85,7 @@ Fig. 1: Bandage plot of the _de novo_ genome assembly generated via Flye. Chromo
 
 Fig. 2: Icarus output of the assembly (top track) aligned against the reference (bottom track). **A)** Size comparison of the assembled genome against the reference, with the chromosome contigs highlighted in red, and the plasmid contig in grey **B)** Alignment of assembly contigs against the reference, with misassemblies marked by grey spheres. The top track displays overlaps between the assembled contigs.
 
-The dot plot of the assembly (Fig. 3) displays 3 diagonal and colinear segments, which each correspond to one contig aligning to the reference genome. None of the segments slope downwards, indicating that there were no large inversions and that the contigs are in the same orientation. The small fragments at the bottom left likely represent the repeat regions. The Circos plot (Fig. 4) displays all 3 contigs and their links to respective regions in the reference. Contigs 1 and 2  consistently map to NC_003197.2 (the reference chromosome) while contig 4 maps fairly well to NC_003277.2 (the reference plasmid).
+The dot plot of the assembly (Fig. 3) displays 3 diagonal and colinear segments, which each correspond to one contig aligning to the reference genome. None of the segments slope downwards, indicating that there were no large inversions and that the contigs are in the same orientation. The small fragments at the bottom left likely represent the repeat regions. The Circos plot (Fig. 4) displays all 3 contigs and their links to respective regions in the reference. Contigs 1 and 2 consistently map to NC_003197.2 (the reference chromosome) while contig 4 shows only sparse links to NC_003277.2 (the reference plasmid).
 
 <img width="2000" height="2000" alt="dotplot" src="https://github.com/user-attachments/assets/40166f74-44d0-46a9-b875-915bcc30ede7" />
 
@@ -113,7 +113,7 @@ In the assembly to reference alignment, the chromosome (NC_003197.2) had a cover
 
 **Visualization of Variants**
 
-After variant calling, Clair3 reported 10,076 variants, with 8991 being single nucleotide polymorphisms (SNPs) and 1114 being indels. SNPs appeared fairly distributed across both the chromosome and the plasmid, while indels appear to cluster in specfic regions within the genome (Fig. 5). Filtering genes with more than 100 variants reveals that a majority of these genes are located within the plasmid. Only 3 genes within the chromsome (STM2628, STM1009, and STM1022) contained more than 100 variants. The greatest density of indels appears to be located within the plasmid, while SNPs occur more freqeuntly in the chromosomal region.
+After variant calling, Clair3 reported 10,076 variants, with 8991 being single nucleotide polymorphisms (SNPs) and 1114 being indels. 2917 variants (2454 SNPs, 463 indels) are within the chromosome, while the remaining 7159 variants (6579 SNPs, 580 indels) are located within the plasmid.  SNPs appear fairly distributed across both the chromosome and the plasmid, while indels appear to cluster in specfic regions within the genome (Fig. 5). Filtering genes with more than 100 variants reveals that a majority of these genes are located within the plasmid. Only 3 genes within the chromsome (STM2628, STM1009, and STM1022) contained more than 100 variants. The greatest density of indels appears to be located within the plasmid, while SNPs occur more freqeuntly in the chromosomal region.
 
 <img width="3000" height="3000" alt="circos_variants" src="https://github.com/user-attachments/assets/9c4486b5-7507-4e0a-a8f4-8c9f87f7a2c0" />
 
@@ -135,20 +135,55 @@ Fig. 8: IGV view of repA2, a gene in the pSLT plasmid, showing variants compared
 
 
 ## **4 | Discussion**
-**Comparison of Assembly to Reference**
+The _de novo_ genome assembly of the _Salmonella enterica_ isolate managed to be fairly successful, even without additional filtering or polishing after assembly. The relatively high genome fraction (95.669) to the reference reflects the fact that the assembly was mostly contiguous. A full resolution of the genome was not achieved due to the repeated regions which were filtered out. The longest two contigs (~3.3 Mb and ~1.7 Mb) map well to the chromosome with a coverage of 97.4%. In contrast, samtools statistics for the plasmid report 0% and 43.1% coverage (for the assembly and raw reads, respectively), which coincides with its lack of alignment to the reference as reported by QUAST. This may indicate that the assembled plasmid is divergent from the reference. The reference plasmid, pSLT, is a virulence plasmid 94Kb long, and variants have been reported from fusion/recombination events with other plasmids (Hiley, Graham & Jennison, 2019). The assembled plasmid has a longer sequence (~109Kb), which may reflect the fact that it is a variant of pSLT that arose from gene duplication. Plasmids do not only contribute to their hosts' virulence, but also play a role in spreading antibiotic resistance and other genes (Rychlik, Gregorova & Hradecka, 2006; Kubasova et al., 2014). The mechanism for doing so has been found to depend on allelic variations within the plasmid genes (Yue & Schifferli, 2014). This aligns well with the fact that variant density is highest in the assembled plasmid (~71% of variants), with these variants potentially leading to changes in its virulence, transmission, or resistance. One of the high-variant genes in the plasmid, repA2, is involved in plasmid replication (Payne et al., 2019), lending more support to the hypothesis that the numerous variants within the assembled plasmid has made it sufficiently different from the pSLT plasmid. On a broader scale, the assembled genome contained 10,076 variants (8991 SNPs, 1114 indels). The general ratio between the SNPs and indels, with SNPs making up a greater proportion of variants, aligns well with literature (Chen et al., 2009), though it is lower than the average ratio (19.61 for bacterial genomes). 
 
-**Signifcance of Variants**
+
+
+
+
+
+
+
+
+
+ 
+
 
 
 ## References
-Collins, A. (2018). The challenge of genome sequence assembly. _Open Bioinformatics Journal, 11_(1), 231-239.
-Dida, F., & Yi, G. (2021). Empirical evaluation of methods for de novo genome assembly. _PeerJ Computer Science, 7_, e636.
-Yang, Y., Du, W., Li, Y., Lei, J., & Pan, W. (2025). Recent advances and challenges in de novo genome assembly. _Genomics Communications, 2_(1)
-Li, I. C., Yu, G. Y., Huang, J. F., Chen, Z. W., & Chou, C. H. (2022). Comparison of reference-based assembly and De novo assembly for bacterial plasmid reconstruction and AMR gene localization in Salmonella enterica Serovar Schwarzengrund isolates. _Microorganisms, 10_(2), 227.
+
 Amarasinghe, S. L., Su, S., Dong, X., Zappia, L., Ritchie, M. E., & Gouil, Q. (2020). Opportunities and challenges in long-read sequencing data analysis. _Genome biology, 21_(1), 30.
-Yang, Y., Du, W., Li, Y., Lei, J., & Pan, W. (2025). Recent advances and challenges in de novo genome assembly. _Genomics Communications, 2_(1).
-Koren, S., Walenz, B. P., Berlin, K., Miller, J. R., Bergman, N. H., & Phillippy, A. M. (2017). Canu: scalable and accurate long-read assembly via adaptive k-mer weighting and repeat separation. _Genome research, 27_(5), 722-736.
-Kolmogorov, M., Yuan, J., Lin, Y., & Pevzner, P. A. (2019). Assembly of long, error-prone reads using repeat graphs. _Nature biotechnology, 37_(5), 540-546.
-Cosma, B. M., Shirali Hossein Zade, R., Jordan, E. N., van Lent, P., Peng, C., Pillay, S., & Abeel, T. (2023). Evaluating long-read de novo assembly tools for eukaryotic genomes: insights and considerations. _GigaScience, 12_, giad100.
+
 Boostrom, I., Portal, E. A., Spiller, O. B., Walsh, T. R., & Sands, K. (2022). Comparing long-read assemblers to explore the potential of a sustainable low-cost, low-infrastructure approach to sequence antimicrobial resistant bacteria with oxford nanopore sequencing. _Frontiers in Microbiology, 13_, 796465.
+
+Chen, J. Q., Wu, Y., Yang, H., Bergelson, J., Kreitman, M., & Tian, D. (2009). Variation in the ratio of nucleotide substitution and indel rates across genomes in mammals and bacteria. _Molecular biology and evolution, 26(7)_, 1523-1531.
+
+Collins, A. (2018). The challenge of genome sequence assembly. _Open Bioinformatics Journal, 11_(1), 231-239.
+
+Cosma, B. M., Shirali Hossein Zade, R., Jordan, E. N., van Lent, P., Peng, C., Pillay, S., & Abeel, T. (2023). Evaluating long-read de novo assembly tools for eukaryotic genomes: insights and considerations. _GigaScience, 12_, giad100.
+
+Dida, F., & Yi, G. (2021). Empirical evaluation of methods for de novo genome assembly. _PeerJ Computer Science, 7_, e636.
+
+Hiley, L., Graham, R. M., & Jennison, A. V. (2019). Genetic characterisation of variants of the virulence plasmid, pSLT, in Salmonella enterica serovar Typhimurium provides evidence of a variety of evolutionary directions consistent with vertical rather than horizontal transmission. _Plos one, 14(4)_, e0215207.
+
+Li, I. C., Yu, G. Y., Huang, J. F., Chen, Z. W., & Chou, C. H. (2022). Comparison of reference-based assembly and De novo assembly for bacterial plasmid reconstruction and AMR gene localization in Salmonella enterica Serovar Schwarzengrund isolates. _Microorganisms, 10_(2), 227.
+
+Kolmogorov, M., Yuan, J., Lin, Y., & Pevzner, P. A. (2019). Assembly of long, error-prone reads using repeat graphs. _Nature biotechnology, 37_(5), 540-546.
+
+Koren, S., Walenz, B. P., Berlin, K., Miller, J. R., Bergman, N. H., & Phillippy, A. M. (2017). Canu: scalable and accurate long-read assembly via adaptive k-mer weighting and repeat separation. _Genome research, 27_(5), 722-736.
+
+Kubasova, T., Matiasovicova, J., Rychlik, I., & Juricova, H. (2014). Complete sequence of multidrug resistance p9134 plasmid and its variants including natural recombinant with the virulence plasmid of Salmonella serovar Typhimurium. _Plasmid, 76_, 8-14.
+
+Payne, M., Octavia, S., Luu, L. D. W., Sotomayor-Castillo, C., Wang, Q., Tay, A. C. Y., ... & Lan, R. (2019). Enhancing genomics-based outbreak detection of endemic Salmonella enterica serovar Typhimurium using dynamic thresholds._ Microbial Genomics, 7(6)_, 000310.
+
+Rychlik, I., Gregorova, D., & Hradecka, H. (2006). Distribution and function of plasmids in Salmonella enterica. _Veterinary microbiology, 112(1)_, 1-10.
+
+Yang, Y., Du, W., Li, Y., Lei, J., & Pan, W. (2025). Recent advances and challenges in de novo genome assembly. _Genomics Communications, 2_(1).
+
+Yue, M., & Schifferli, D. M. (2014). Allelic variation in Salmonella: an underappreciated driver of adaptation and virulence. _Frontiers in microbiology, 4_, 419.
+
+
+
+
+
 
