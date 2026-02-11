@@ -112,6 +112,7 @@ Table 1: Statistics of the assembly-to-reference alignment and reads-to-referenc
 In the assembly to reference alignment, the chromosome (NC_003197.2) had a coverage of 97.42%, a mean depth of 0.98, a mean base quality of 255, and a mean mapping quality of 60. On the other hand, the plasmid (NC_003277.2) had 0% coverage, and consequently, 0 in all other metrics. In the raw reads to reference alignment, the chromosme had a coverage of 97.8% and a mean depth of 150.89, while the plasmid had a coverage of 43.1% and a mean depth of 81.66. While the two differed greatly in coverage and mean depth, they had fairly close mean base qualities and mean mapping qualities (41.4, 59.5 and 42.2, 44.7, respectively).
 
 **Visualization of Variants**
+
 After variant calling, Clair3 reported 10,076 variants, with 8991 being single nucleotide polymorphisms (SNPs) and 1114 being indels. SNPs appeared fairly distributed across both the chromosome and the plasmid, while indels appear to cluster in specfic regions within the genome (Fig. 5). Filtering genes with more than 100 variants reveals that a majority of these genes are located within the plasmid. Only 3 genes within the chromsome (STM2628, STM1009, and STM1022) contained more than 100 variants. The greatest density of indels appears to be located within the plasmid, while SNPs occur more freqeuntly in the chromosomal region.
 
 <img width="3000" height="3000" alt="circos_variants" src="https://github.com/user-attachments/assets/9c4486b5-7507-4e0a-a8f4-8c9f87f7a2c0" />
@@ -120,7 +121,7 @@ Fig. 5: Circos plot of variants (i.e. SNPs, insertions, and deletions) after ali
 
 Visualizing one of the high-variant chromosomal genes (STM1009) in IGV reveals specific details about the variants within the gene (Fig. 6). STM1009 has a total of 211 variants (148 SNPs, 63 indels). Some variants lead to missense mutations and potential frameshift mutations, but the majority of SNPs appear lead to silent mutations. In contrast, another chromosomal gene (nrdD) only has 1 variant, a C to T substitution. (Fig. 7). A high-variant gene in the plasmid (repA2) has 185 variants (180 SNPs, 5 indels), with many leading to potential missense, frameshift, or nonsense mutations (Fig. 8).
 
-<img width="1000" height="540" alt="STM1009" src="https://github.com/user-attachments/assets/6c6c897e-faa0-484f-be71-7558e6b64c5b" />
+<img width="1000" height="494" alt="STM1009" src="https://github.com/user-attachments/assets/09b94b56-262a-42ab-a474-6794a1f6f32b" />
 
 Fig. 6: IGV view of STM1009, a gene in the chromosome, showing variants in the raw reads compared to the reference genome. Examples of deletions (red box), SNPs (orange box), and insertions (blue box) are outlined. Missense mutations are highlighted in green in the sequence track, while stop codons are highlighted in red. The deletion followed by a stop codon may represent a frameshift mutation.
 
@@ -128,7 +129,7 @@ Fig. 6: IGV view of STM1009, a gene in the chromosome, showing variants in the r
 
 Fig. 7: IGV view of nrdD, a gene in the chromosome, showing one variant (an SNP).
 
-<img width="1000" height="540" alt="repA2" src="https://github.com/user-attachments/assets/9bb989db-728f-4653-83d5-ad3f44d38010" />
+<img width="1000" height="467" alt="repA2" src="https://github.com/user-attachments/assets/d49d3cc5-c97a-4308-a042-4a5105e14311" />
 
 Fig. 8: IGV view of repA2, a gene in the pSLT plasmid, showing variants compared to the reference genome. Indels are represented by the purple lines, while SNPs are represented by orange, green, blue, and red lines. Altered proteins and stop codons are highlighted in the sequence track in green and red, respectively.
 
