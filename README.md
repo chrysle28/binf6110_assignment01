@@ -135,19 +135,11 @@ Fig. 8: IGV view of repA2, a gene in the pSLT plasmid, showing variants compared
 
 
 ## **4 | Discussion**
-The _de novo_ genome assembly of the _Salmonella enterica_ isolate managed to be fairly successful, even without additional filtering or polishing after assembly. The relatively high genome fraction (95.669) to the reference reflects the fact that the assembly was mostly contiguous. A full resolution of the genome was not achieved due to the repeated regions which were filtered out. The longest two contigs (~3.3 Mb and ~1.7 Mb) map well to the chromosome with a coverage of 97.4%. In contrast, samtools statistics for the plasmid report 0% and 43.1% coverage (for the assembly and raw reads, respectively), which coincides with its lack of alignment to the reference as reported by QUAST. This may indicate that the assembled plasmid is divergent from the reference. The reference plasmid, pSLT, is a virulence plasmid 94Kb long, and variants have been reported from fusion/recombination events with other plasmids (Hiley, Graham & Jennison, 2019). The assembled plasmid has a longer sequence (~109Kb), which may reflect the fact that it is a variant of pSLT that arose from gene duplication. Plasmids do not only contribute to their hosts' virulence, but also play a role in spreading antibiotic resistance and other genes (Rychlik, Gregorova & Hradecka, 2006; Kubasova et al., 2014). The mechanism for doing so has been found to depend on allelic variations within the plasmid genes (Yue & Schifferli, 2014). This aligns well with the fact that variant density is highest in the assembled plasmid (~71% of variants), with these variants potentially leading to changes in its virulence, transmission, or resistance. One of the high-variant genes in the plasmid, repA2, is involved in plasmid replication (Payne et al., 2019), lending more support to the hypothesis that the numerous variants within the assembled plasmid has made it sufficiently different from the pSLT plasmid. On a broader scale, the assembled genome contained 10,076 variants (8991 SNPs, 1114 indels). The general ratio between the SNPs and indels, with SNPs making up a greater proportion of variants, aligns well with literature (Chen et al., 2009), though it is lower than the average ratio (19.61 for bacterial genomes). 
+The _de novo_ genome assembly of the _Salmonella enterica_ isolate managed to be fairly successful, even without additional filtering or polishing after assembly. The relatively high genome fraction (95.669) to the reference reflects the fact that the assembly was mostly contiguous. A full resolution of the genome was not achieved due to the repeated regions which were filtered out. The longest two contigs (~3.3 Mb and ~1.7 Mb) map well to the chromosome with a coverage of 97.4%. 
 
+In contrast, samtools statistics for the plasmid report 0% and 43.1% coverage (for the assembly and raw reads, respectively), which coincides with its lack of alignment to the reference as reported by QUAST. This may indicate that the assembled plasmid is divergent from the reference. The reference plasmid, pSLT, is a virulence plasmid 94Kb long, and variants have been reported from fusion/recombination events with other plasmids (Hiley, Graham & Jennison, 2019). The assembled plasmid has a longer sequence (~109Kb), which may reflect the fact that it is a variant of pSLT that arose from gene duplication. Plasmids do not only contribute to their hosts' virulence, but also play a role in spreading antibiotic resistance and other genes (Rychlik, Gregorova & Hradecka, 2006; Kubasova et al., 2014). The mechanism for doing so has been found to depend on allelic variations within the plasmid genes (Yue & Schifferli, 2014). This aligns well with the fact that variant density is highest in the assembled plasmid (~71% of variants), with these variants potentially leading to changes in its virulence, transmission, or resistance. One of the high-variant genes in the plasmid, repA2, is involved in plasmid replication (Payne et al., 2019), lending more support to the hypothesis that the numerous variants within the assembled plasmid has made it sufficiently different from the pSLT plasmid. 
 
-
-
-
-
-
-
-
-
- 
-
+On a broader scale, the assembled genome contained 10,076 variants (8991 SNPs, 1114 indels). The general ratio between the SNPs and indels, with SNPs making up a greater proportion of variants, aligns well with literature (Chen et al., 2009), though it is lower than the average ratio (19.61 for bacterial genomes). Although the plasmid contained more high-variant genes (i.e. more than 100 variants), the high-variant genes located within the chromosome (STM1009, STM1022, and STM2626) has interesting implications for the _Salmonella enterica_ strain. These three chromosomal genes encode Gifsy-1/Gifsy-2, which are phages that contribute to the virulence of the host bacteria (Lawley et al., 2006; Mohammed & Cormican, 2015). In particular, Gifsy-1, which is encoded by STM2626, is involved in the control of bacterial proliferation in tissues (Lawley et al., 2006). Since these genes are involved in the virulence of _Salmonella enterica_, it is reasonable that they contain the most variants. Potential missense or frameshift mutations, as seen with STM1009 (Fig. 6), could lead to changes in the host bacteria, whether it be an increase or decrease in its virulence. Mutations in other genes, such as the deletion of the gidA gene (Shippy et al. 2012) or SNPs in the envZ gene (Ko & Choi, 2021) have been shown to affect _Salmonella enterica's_ virulence or morphology. In this assembly, no variants were detected in any of these genes, signifying that this specific isolate could potentially reflect a more virulent strain, due to its high variant density in its virulent plasmid and its chromosomal virulence genes.
 
 
 ## References
@@ -166,7 +158,11 @@ Dida, F., & Yi, G. (2021). Empirical evaluation of methods for de novo genome as
 
 Hiley, L., Graham, R. M., & Jennison, A. V. (2019). Genetic characterisation of variants of the virulence plasmid, pSLT, in Salmonella enterica serovar Typhimurium provides evidence of a variety of evolutionary directions consistent with vertical rather than horizontal transmission. _Plos one, 14(4)_, e0215207.
 
+Lawley, T. D., Chan, K., Thompson, L. J., Kim, C. C., Govoni, G. R., & Monack, D. M. (2006). Genome-wide screen for Salmonella genes required for long-term systemic infection of the mouse. _PLoS pathogens, 2(2)_, e11.
+
 Li, I. C., Yu, G. Y., Huang, J. F., Chen, Z. W., & Chou, C. H. (2022). Comparison of reference-based assembly and De novo assembly for bacterial plasmid reconstruction and AMR gene localization in Salmonella enterica Serovar Schwarzengrund isolates. _Microorganisms, 10_(2), 227.
+
+Ko, D., & Choi, S. H. (2021). Comparative genomics reveals an SNP potentially leading to phenotypic diversity of Salmonella enterica serovar Enteritidis. _Microbial Genomics, 7(5)_, 000572.
 
 Kolmogorov, M., Yuan, J., Lin, Y., & Pevzner, P. A. (2019). Assembly of long, error-prone reads using repeat graphs. _Nature biotechnology, 37_(5), 540-546.
 
@@ -176,7 +172,11 @@ Kubasova, T., Matiasovicova, J., Rychlik, I., & Juricova, H. (2014). Complete se
 
 Payne, M., Octavia, S., Luu, L. D. W., Sotomayor-Castillo, C., Wang, Q., Tay, A. C. Y., ... & Lan, R. (2019). Enhancing genomics-based outbreak detection of endemic Salmonella enterica serovar Typhimurium using dynamic thresholds._ Microbial Genomics, 7(6)_, 000310.
 
+Mohammed, M., & Cormican, M. (2015). Whole genome sequencing provides possible explanations for the difference in phage susceptibility among two Salmonella Typhimurium phage types (DT8 and DT30) associated with a single foodborne outbreak. _BMC research notes, 8(1)_, 728.
+
 Rychlik, I., Gregorova, D., & Hradecka, H. (2006). Distribution and function of plasmids in Salmonella enterica. _Veterinary microbiology, 112(1)_, 1-10.
+
+Shippy, D. C., Heintz, J. A., Albrecht, R. M., Eakley, N. M., & Fadl, A. A. (2012). Deletion of glucose-inhibited division (gidA) gene alters the morphological and replication characteristics of Salmonella enterica Serovar typhimurium. _Archives of microbiology, 194(6)_, 405-412.
 
 Yang, Y., Du, W., Li, Y., Lei, J., & Pan, W. (2025). Recent advances and challenges in de novo genome assembly. _Genomics Communications, 2_(1).
 
