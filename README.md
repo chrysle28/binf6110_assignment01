@@ -74,6 +74,7 @@ The _de novo_ assembly was visualized using Bandage (v0.9.0), with the input fil
 
 ## **3 | Results**
 **Quality of _de novo_ Genome Assembly and Alignment to Reference**
+
 Assembly of the long read sequences with Flye resulted in three contigs, with lengths of 3,318,776 bp, 1,676,977 bp, and 109,059 bp (Fig. 1, Fig. 2A, Fig. 3, Fig. 4). The assembly's total length was 5,104,812 bp, compared to the reference genome's length of 4,951,383 bp. The largest continuous alignment in the assembly was 953,687 bp. The bandage plot reports an additional sequence 6,269 bp long, which represents repeated regions which were not resolved. QUAST analysis reported that the total number of aligned bases in the assembly was 4,746,095, with a duplication ratio of 1.002, while the genome fraction was 95.669%. Moreover, QUAST showed that there were 35 total misassemblies (25 relocations and 10 local), with an overall misassembled contigs length  of 4,995,753 bp. (Fig. 2B). There were 27.39 mismatches per 100 kbp, and 3.81 indels per 100 kbp.
 
 <img width="926" height="578" alt="bandage_plot" src="https://github.com/user-attachments/assets/bbb104ba-8bbd-4036-8b74-73c1ef718a49" />
@@ -95,7 +96,7 @@ Fig. 3: Dotplot of the alignment between the assembly and the reference genome, 
 Fig. 4: Circos plot visualizing links between the contigs of the assembly (blue) and the reference genome (grey).
 
 
-**Statistics of Assembly-to-Reference and Reads-to-Reference Alignments**
+**Assembly-to-Reference and Reads-to-Reference Alignments**
 
 | Name  | Coverage (%) | Mean Depth | Mean base quality | Mean mapping quality |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -134,6 +135,8 @@ Fig. 8: IGV view of repA2, a gene in the pSLT plasmid, showing variants compared
 
 ## **4 | Discussion**
 **Comparison of Assembly to Reference**
+
+**Signifcance of Variants**
 
 
 ## References
