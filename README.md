@@ -74,17 +74,21 @@ The _de novo_ assembly was visualized using Bandage (v0.9.0), with the input fil
 Assembly of the long read sequences with Flye resulted in three contigs, with lengths of 3,318,776 bp, 1,676,977 bp, and 109,059 bp (Fig. 1, Fig. 2A, Fig. 3, Fig. 4). The assembly's total length was 5,104,812 bp, compared to the reference genome's length of 4,951,383 bp. The largest continuous alignment in the assembly was 953,687 bp. The bandage plot reports an additional sequence 6,269 bp long, which represents repeated regions which were not resolved. QUAST analysis reported that the total number of aligned bases in the assembly was 4,746,095, with a duplication ratio of 1.002, while the genome fraction was 95.669%. Moreover, QUAST showed that there were 35 total misassemblies (25 relocations and 10 local), with an overall misassembled contigs length  of 4,995,753 bp. (Fig. 2B). There were 27.39 mismatches per 100 kbp, and 3.81 indels per 100 kbp.
 
 <img width="926" height="578" alt="bandage_plot" src="https://github.com/user-attachments/assets/bbb104ba-8bbd-4036-8b74-73c1ef718a49" />
+
 Fig. 1: Bandage plot of the _de novo_ genome assembly generated via Flye. Chromosome contigs are labeled as edge_1 and edge_2 (green and brown loops, respectively) while the plasmid is labeled as edge_4. Edge_3 represents repeat regions. 
 
-<img width="1350" height="540" alt="quast_figs" src="https://github.com/user-attachments/assets/68cf93af-8f54-47b8-89af-a96daf3ec9c5" />
+<img width="1350" height="455" alt="quast_figs" src="https://github.com/user-attachments/assets/efa92638-a82f-4d7d-a721-d89f34c663ff" />
+
 Fig. 2: Icarus output of the assembly (top track) aligned against the reference (bottom track). **A)** Size comparison of the assembled genome against the reference, with the chromosome contigs highlighted in red, and the plasmid contig in grey **B)** Alignment of assembly contigs against the reference, with misassemblies marked by grey spheres. The top track displays overlaps between the assembled contigs.
 
-Figures 3 and 4 represent alternative visualizations of the alignment between the assembly and the reference genome. The dot plot (Fig. 3) displays 3 diagonal and colinear segments, which each correspond to one contig aligning to the reference genome. None of the segments slope downwards, indicating that there were no large inversions and that the contigs are in the same orientation. The small fragments at the bottom left likely represent the repeat regions. The Circos plot (Fig. 4) displays all 3 contigs and their links to respective regions in the reference. Contigs 1 and 2  consistently map to NC_003197.2 (the reference chromosome) while contig 4 maps fairly well to NC_003277.2 (the reference plasmid).
+The dot plot of the assembly (Fig. 3) displays 3 diagonal and colinear segments, which each correspond to one contig aligning to the reference genome. None of the segments slope downwards, indicating that there were no large inversions and that the contigs are in the same orientation. The small fragments at the bottom left likely represent the repeat regions. The Circos plot (Fig. 4) displays all 3 contigs and their links to respective regions in the reference. Contigs 1 and 2  consistently map to NC_003197.2 (the reference chromosome) while contig 4 maps fairly well to NC_003277.2 (the reference plasmid).
 
 <img width="2000" height="2000" alt="dotplot" src="https://github.com/user-attachments/assets/40166f74-44d0-46a9-b875-915bcc30ede7" />
+
 Fig. 3: Dotplot of the alignment between the assembly and the reference genome, with contigs plotted in blue. The two longer contigs represent the chromosome, while the shortest contig represents the plasmid.
 
 <img width="3000" height="3000" alt="circos_mm" src="https://github.com/user-attachments/assets/83b7c169-fb4d-4767-b518-35461a9dbc5c" />
+
 Fig. 4: Circos plot visualizing links between the contigs of the assembly (blue) and the reference genome (grey).
 
 **Statistics of Assembly-to-Reference and Reads-to-Reference Alignments**
@@ -103,21 +107,28 @@ Table 1: Statistics of the assembly-to-reference alignment and reads-to-referenc
 In the assembly to reference alignment, the chromosome (NC_003197.2) had a coverage of 97.42%, a mean depth of 0.98, a mean base quality of 255, and a mean mapping quality of 60. On the other hand, the plasmid (NC_003277.2) had 0% coverage, and consequently, 0 in all other metrics. In the raw reads to reference alignment, the chromosme had a coverage of 97.8% and a mean depth of 150.89, while the plasmid had a coverage of 43.1% and a mean depth of 81.66. While the two differed greatly in coverage and mean depth, they had fairly close mean base qualities and mean mapping qualities (41.4, 59.5 and 42.2, 44.7, respectively).
 
 **Visualization of Variants**
-Variant calling using Clair3 revealed that there were
+After variant calling, Clair3 reported 10,076 variants, with 8991 being single nucleotide polymorphisms (SNPs) and 1114 being indels. SNPs appeared fairly distributed across both the chromosome and the plasmid, while indels appear to cluster in specfic regions within the genome (Fig. 5). Filtering genes with more than 100 variants reveals that a majority of these genes are located within the plasmid. Only 3 genes within the chromsome (STM2628, STM1009, and STM1022) contained more than 100 variants. The greatest density of indels appears to be located within the plasmid, while SNPs occur more freqeuntly in the chromosomal region.
 
 <img width="3000" height="3000" alt="circos_variants" src="https://github.com/user-attachments/assets/9c4486b5-7507-4e0a-a8f4-8c9f87f7a2c0" />
-Fig. 5: Circos plot of variants (i.e. SNPs, insertions, and deletions) after aligning raw reads to the reference genome. Red circles represent the SNPs, while blue triangles represent indels. Genes which contain more than 100 variants in the reads are highlighted in green. The variant density heatmap is binned into windows of 10 kb, with darker regions (i.e. red) representing greater variant density.
+
+Fig. 5: Circos plot of variants (i.e. SNPs, insertions, and deletions) after aligning raw reads to the reference genome. Red circles represent the SNPs, while blue triangles represent indels. Genes which contain more than 100 variants in the reads are highlighted in green. The variant density heatmap is binned into windows of 10 kb, with red and blue regions representing greater variant density of SNPs and indels, respectively.
+
+Visualizing one of the high-variant chromosomal genes (STM1009) in IGV reveals specific details about the variants within the gene (Fig. 6). STM1009 has a total of 211 variants (148 SNPs, 63 indels). Some variants lead to missense mutations and potential frameshift mutations, but the majority of SNPs appear lead to silent mutations. In contrast, another chromosomal gene (nrdD) only has 1 variant, a C to T substitution. (Fig. 7). A high-variant gene in the plasmid (repA2) has 185 variants (180 SNPs, 5 indels), with many leading to potential missense, frameshift, or nonsense mutations (Fig. 8).
 
 <img width="1000" height="540" alt="STM1009" src="https://github.com/user-attachments/assets/6c6c897e-faa0-484f-be71-7558e6b64c5b" />
+
 Fig. 6: IGV view of STM1009, a gene in the chromosome, showing variants in the raw reads compared to the reference genome. Examples of deletions (red box), SNPs (orange box), and insertions (blue box) are outlined. Missense mutations are highlighted in green in the sequence track, while stop codons are highlighted in red. The deletion followed by a stop codon may represent a frameshift mutation.
 
-<img width="1000" height="540" alt="repA2" src="https://github.com/user-attachments/assets/9bb989db-728f-4653-83d5-ad3f44d38010" />
-Fig. 7: IGV view of repA2, a gene in the pSLT plasmid, showing variants compared to the reference genome. Indels are represented by the purple lines, while SNPs are represented by orange, green, blue, and red lines. Altered proteins and stop codons are highlighted in the sequence track in green and red, respectively.
-
 <img width="1903" height="912" alt="nrdD" src="https://github.com/user-attachments/assets/d4e21c54-0544-4a00-b811-4550ed1161fe" />
-Fig. 8: IGV view of nrdD, a gene in the chromosome, showing one variant (a substitution from C to T).
+
+Fig. 7: IGV view of nrdD, a gene in the chromosome, showing one variant (an SNP).
+
+<img width="1000" height="540" alt="repA2" src="https://github.com/user-attachments/assets/9bb989db-728f-4653-83d5-ad3f44d38010" />
+
+Fig. 8: IGV view of repA2, a gene in the pSLT plasmid, showing variants compared to the reference genome. Indels are represented by the purple lines, while SNPs are represented by orange, green, blue, and red lines. Altered proteins and stop codons are highlighted in the sequence track in green and red, respectively.
 
 ## **4 | Discussion**
+**Comparison of Assembly to Reference**
 
 ## References
 [^1]: Collins, A. (2018). The challenge of genome sequence assembly. _Open Bioinformatics Journal, 11_(1), 231-239.
