@@ -1,0 +1,48 @@
+This is WhatsHap 2.8 running under Python 3.10.19
+Working on 1 sample from 1 family
+
+# Working on contig NC_003277.2 in individual SAMPLE
+Found 11 usable heterozygous variants (0 skipped due to missing genotypes)
+Number of supplementary alignments: 0
+Number of non-singleton groups: 0
+Skipped 0 groups
+Found 325 reads covering 11 variants
+Kept 148 reads that cover at least two variants each
+Selected 15 most phase-informative reads covering 10 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 10 variants (100.0% of accessible variants) between position 53953 and 54348
+
+# Resource usage
+Maximum memory usage: 0.052 GB
+Time spent reading BAM/CRAM:                    0.1 s
+Time spent parsing VCF:                         0.0 s
+Time spent selecting reads:                     0.0 s
+Time spent phasing:                             0.0 s
+Time spent writing VCF:                         0.0 s
+Time spent finding components:                  0.0 s
+Time spent on rest:                             0.0 s
+Total elapsed time:                             0.2 s
+This is WhatsHap 2.8 running under Python 3.10.19
+Working on 1 sample from 1 family
+
+# Working on contig NC_003197.2 in individual SAMPLE
+Found 120 usable heterozygous variants (0 skipped due to missing genotypes)
+Number of supplementary alignments: 0
+Number of non-singleton groups: 0
+Skipped 0 groups
+Found 2656 reads covering 120 variants
+Kept 2347 reads that cover at least two variants each
+Selected 120 most phase-informative reads covering 118 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 44 variants (37.3% of accessible variants) between position 2764192 and 2772437
+
+# Resource usage
+Maximum memory usage: 0.065 GB
+Time spent reading BAM/CRAM:                    4.1 s
+Time spent parsing VCF:                         0.0 s
+Time spent selecting reads:                     0.2 s
+Time spent phasing:                             0.4 s
+Time spent writing VCF:                         0.0 s
+Time spent finding components:                  0.0 s
+Time spent on rest:                             0.0 s
+Total elapsed time:                             4.7 s

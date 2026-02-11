@@ -1,0 +1,12 @@
+[samfaipath] build FASTA index...
+[M::mm_idx_gen::0.124*0.93] collected minimizers
+[M::mm_idx_gen::0.141*1.44] sorted minimizers
+[M::main::0.141*1.44] loaded/built the index for 4 target sequence(s)
+[M::mm_mapopt_update::0.169*1.36] mid_occ = 10
+[M::mm_idx_stat] kmer size: 17; skip: 10; is_hpc: 0; #seq: 4
+[M::mm_idx_stat::0.179*1.33] distinct minimizers: 911151 (98.21% are singletons); average occurrences: 1.027; average spacing: 5.501; total length: 5149104
+[M::worker_pipeline::39.704*5.17] mapped 196031 sequences
+[M::main] Version: 2.24-r1155-dirty
+[M::main] CMD: flye-minimap2 -x map-ont -t 6 -k 17 -a -p 0.5 -N 10 --sam-hit-only -L -K 1G -z 1000 -Q --secondary-seq -I 64G /home/ken/binf6110/assign_01/flye_results/00-assembly/draft_assembly.fasta /home/ken/binf6110/assign_01/SRR32410565.fastq
+[M::main] Real time: 39.745 sec; CPU: 205.364 sec; Peak RSS: 1.272 GB
+[bam_sort_core] merging from 0 files and 4 in-memory blocks...

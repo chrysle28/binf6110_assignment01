@@ -1,0 +1,198 @@
+[INFO] CLAIR3 VERSION: v1.2.0
+[INFO] BAM FILE PATH: /home/ken/binf6110/assign_01/raw_ref_sorted.bam
+[INFO] REFERENCE FILE PATH: /home/ken/binf6110/assign_01/GCF_000006945.2_ASM694v2_genomic.fna
+[INFO] MODEL PATH: /home/ken/miniconda3/envs/clair3/bin/models/r1041_e82_400bps_sup_v500
+[INFO] OUTPUT FOLDER: /home/ken/binf6110/assign_01/clair3_results
+[INFO] PLATFORM: ont
+[INFO] THREADS: 6
+[INFO] BED FILE PATH: EMPTY
+[INFO] VCF FILE PATH: EMPTY
+[INFO] CONTIGS: EMPTY
+[INFO] CONDA PREFIX: /home/ken/miniconda3/envs/clair3
+[INFO] SAMTOOLS PATH: samtools
+[INFO] PYTHON PATH: python3
+[INFO] PYPY PATH: pypy3
+[INFO] PARALLEL PATH: parallel
+[INFO] WHATSHAP PATH: whatshap
+[INFO] LONGPHASE PATH: EMPTY
+[INFO] CHUNK SIZE: 5000000
+[INFO] FULL ALIGN PROPORTION: 0.7
+[INFO] FULL ALIGN REFERENCE PROPORTION: 0.1
+[INFO] PHASING PROPORTION: 0.7
+[INFO] MINIMUM MQ: 5
+[INFO] MINIMUM COVERAGE: 2
+[INFO] SNP AF THRESHOLD: 0.08
+[INFO] INDEL AF THRESHOLD: 0.15
+[INFO] BASE ERROR IN GVCF: 0.001
+[INFO] GQ BIN SIZE IN GVCF: 5
+[INFO] ENABLE FILEUP ONLY CALLING: False
+[INFO] ENABLE FAST MODE CALLING: False
+[INFO] ENABLE CALLING SNP CANDIDATES ONLY: False
+[INFO] ENABLE PRINTING REFERENCE CALLS: False
+[INFO] ENABLE OUTPUT GVCF: False
+[INFO] ENABLE HAPLOID PRECISE MODE: False
+[INFO] ENABLE HAPLOID SENSITIVE MODE: False
+[INFO] ENABLE INCLUDE ALL CTGS CALLING: True
+[INFO] ENABLE NO PHASING FOR FULL ALIGNMENT: False
+[INFO] ENABLE REMOVING INTERMEDIATE FILES: False
+[INFO] ENABLE LONGPHASE FOR INTERMEDIATE VCF PHASING: False
+[INFO] ENABLE PHASING FINAL VCF OUTPUT USING WHATSHAP: False
+[INFO] ENABLE PHASING FINAL VCF OUTPUT USING LONGPHASE: False
+[INFO] ENABLE HAPLOTAGGING FINAL BAM: False
+[INFO] ENABLE LONG INDEL CALLING: False
+[INFO] ENABLE C_IMPLEMENT: True
+
++ /home/ken/miniconda3/envs/clair3/bin/scripts/clair3_c_impl.sh --bam_fn /home/ken/binf6110/assign_01/raw_ref_sorted.bam --ref_fn /home/ken/binf6110/assign_01/GCF_000006945.2_ASM694v2_genomic.fna --threads 6 --model_path /home/ken/miniconda3/envs/clair3/bin/models/r1041_e82_400bps_sup_v500 --platform ont --output /home/ken/binf6110/assign_01/clair3_results --bed_fn=EMPTY --vcf_fn=EMPTY --ctg_name=EMPTY --sample_name=SAMPLE --chunk_num=0 --chunk_size=5000000 --samtools=samtools --python=python3 --pypy=pypy3 --parallel=parallel --whatshap=whatshap --qual=2 --var_pct_full=0.7 --ref_pct_full=0.1 --var_pct_phasing=0.7 --snp_min_af=0.08 --indel_min_af=0.15 --min_mq=5 --min_coverage=2 --min_contig_size=0 --pileup_only=False --gvcf=False --base_err=0.001 --gq_bin_size=5 --fast_mode=False --call_snp_only=False --enable_variant_calling_at_sequence_head_and_tail=False --output_all_contigs_in_gvcf_header=False --print_ref_calls=False --haploid_precise=False --haploid_sensitive=False --include_all_ctgs=True --no_phasing_for_fa=False --pileup_model_prefix=pileup --fa_model_prefix=full_alignment --remove_intermediate_dir=False --enable_phasing=False --enable_long_indel=False --keep_iupac_bases=False --use_gpu=False --device=EMPTY --longphase_for_phasing=False --longphase=EMPTY --use_whatshap_for_intermediate_phasing=True --use_longphase_for_intermediate_phasing=False --use_whatshap_for_final_output_phasing=False --use_longphase_for_final_output_phasing=False --use_whatshap_for_final_output_haplotagging=False
+
+[INFO] Check environment variables
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/log
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/pileup_output
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/merge_output
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/phase_output
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/gvcf_tmp_output
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/full_alignment_output
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/phase_output/phase_vcf
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/phase_output/phase_bam
+[INFO] Create folder /home/ken/binf6110/assign_01/clair3_results/tmp/full_alignment_output/candidate_bed
+[INFO] --include_all_ctgs enabled
+[93m[WARNING] Please enable --no_phasing_for_fa if calling variant in non-diploid organisms[0m
+[INFO] Call variant in contigs: NC_003197.2 NC_003277.2
+[INFO] Chunk number for each contig: 1 1
+[INFO] 1/7 Call variants using pileup model
+2026-02-08 02:31:23.734626: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-02-08 02:31:23.734681: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-02-08 02:31:23.735782: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-02-08 02:31:23.741157: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-08 02:31:25.237523: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:274] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Calling variants ...
+Total processed positions in NC_003277.2 (chunk 1/1) : 7930
+Total time elapsed: 8.97 s
+2026-02-08 02:31:23.734627: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-02-08 02:31:23.734687: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-02-08 02:31:23.735781: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-02-08 02:31:23.741157: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-08 02:31:25.237208: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:274] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Calling variants ...
+Total processed positions in NC_003197.2 (chunk 1/1) : 6799
+Total time elapsed: 23.42 s
+
+real	0m25.949s
+user	0m33.850s
+sys	0m3.001s
+
+[INFO] 2/7 Select heterozygous SNP variants for Whatshap phasing and haplotagging
+[INFO] Select heterozygous pileup variants exceeding phasing quality cutoff 8
+[INFO] Total heterozygous SNP positions selected: NC_003197.2: 120
+[INFO] Total heterozygous SNP positions selected: NC_003277.2: 11
+
+real	0m0.292s
+user	0m0.213s
+sys	0m0.146s
+
+[INFO] 3/7 Phase VCF file using Whatshap
+This is WhatsHap 2.8 running under Python 3.10.19
+Working on 1 sample from 1 family
+
+# Working on contig NC_003277.2 in individual SAMPLE
+Found 11 usable heterozygous variants (0 skipped due to missing genotypes)
+Number of supplementary alignments: 0
+Number of non-singleton groups: 0
+Skipped 0 groups
+Found 325 reads covering 11 variants
+Kept 148 reads that cover at least two variants each
+Selected 15 most phase-informative reads covering 10 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 10 variants (100.0% of accessible variants) between position 53953 and 54348
+
+# Resource usage
+Maximum memory usage: 0.052 GB
+Time spent reading BAM/CRAM:                    0.1 s
+Time spent parsing VCF:                         0.0 s
+Time spent selecting reads:                     0.0 s
+Time spent phasing:                             0.0 s
+Time spent writing VCF:                         0.0 s
+Time spent finding components:                  0.0 s
+Time spent on rest:                             0.0 s
+Total elapsed time:                             0.2 s
+This is WhatsHap 2.8 running under Python 3.10.19
+Working on 1 sample from 1 family
+
+# Working on contig NC_003197.2 in individual SAMPLE
+Found 120 usable heterozygous variants (0 skipped due to missing genotypes)
+Number of supplementary alignments: 0
+Number of non-singleton groups: 0
+Skipped 0 groups
+Found 2656 reads covering 120 variants
+Kept 2347 reads that cover at least two variants each
+Selected 120 most phase-informative reads covering 118 variants
+Phasing 1 sample by solving the MEC problem ...
+Largest block contains 44 variants (37.3% of accessible variants) between position 2764192 and 2772437
+
+# Resource usage
+Maximum memory usage: 0.065 GB
+Time spent reading BAM/CRAM:                    4.1 s
+Time spent parsing VCF:                         0.0 s
+Time spent selecting reads:                     0.2 s
+Time spent phasing:                             0.4 s
+Time spent writing VCF:                         0.0 s
+Time spent finding components:                  0.0 s
+Time spent on rest:                             0.0 s
+Total elapsed time:                             4.7 s
+
+real	0m5.133s
+user	0m4.851s
+sys	0m0.269s
+
+[INFO] 5/7 Select candidates for full-alignment calling
+[INFO] Set variants quality cutoff 35.0
+[INFO] Set reference calls quality cutoff 10.0
+[INFO] Low quality reference calls to be processed in NC_003277.2: 83
+[INFO] Low quality variants to be processed in NC_003277.2: 4921
+[INFO] Low quality reference calls to be processed in NC_003197.2: 367
+[INFO] Low quality variants to be processed in NC_003197.2: 2218
+
+real	0m0.283s
+user	0m0.216s
+sys	0m0.127s
+
+[INFO] 6/7 Call low-quality variants using full-alignment model
+2026-02-08 02:31:56.003646: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-02-08 02:31:56.003692: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-02-08 02:31:56.004749: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-02-08 02:31:56.010361: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-08 02:31:57.517406: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:274] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Calling variants ...
+Total processed positions in NC_003197.2 (chunk 1/1) : 2585
+Total time elapsed: 27.17 s
+2026-02-08 02:31:56.003620: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-02-08 02:31:56.003686: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-02-08 02:31:56.004749: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-02-08 02:31:56.010387: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-08 02:31:57.517173: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:274] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Calling variants ...
+Total processed positions in NC_003277.2 (chunk 1/1) : 5004
+Total time elapsed: 34.42 s
+
+real	0m37.044s
+user	0m53.313s
+sys	0m12.745s
+
+[INFO] 7/7 Merge pileup VCF and full-alignment VCF
+[INFO] Pileup variants processed in NC_003197.2: 691
+[INFO] Full-alignment variants processed in NC_003197.2: 2226
+[INFO] Pileup variants processed in NC_003277.2: 2377
+[INFO] Full-alignment variants processed in NC_003277.2: 4782
+
+real	0m0.331s
+user	0m0.303s
+sys	0m0.157s
+
+[INFO] Finish calling, output file: /home/ken/binf6110/assign_01/clair3_results/merge_output.vcf.gz
+
+real	1m10.380s
+user	1m33.452s
+sys	0m16.952s

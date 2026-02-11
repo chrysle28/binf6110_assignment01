@@ -1,0 +1,1 @@
+/home/ken/miniconda3/envs/clair3/bin/run_clair3.sh --bam_fn=/home/ken/binf6110/assign_01/raw_ref_sorted.bam --ref_fn=GCF_000006945.2_ASM694v2_genomic.fna --threads=6 --platform=ont --model_path=/home/ken/miniconda3/envs/clair3/bin/models/r1041_e82_400bps_sup_v500 --include_all_ctgs --output=/home/ken/binf6110/assign_01/clair3_results
